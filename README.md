@@ -2,6 +2,7 @@
 
 This repository is to create the analyses for the manuscript "Experimental and statistical decisions influence the accuracy and reliability of host resistance and tolerance measurements". 
 
+![Screenshot](readme_github/github_readmefig.png)
 
 ## BASELINE ANALYSES
 **Main Coding Scripts:** Baseline_Scenarios.R, Baseline_Stats.R, Baseline_Figs.R 
