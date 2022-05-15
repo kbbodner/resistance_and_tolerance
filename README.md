@@ -2,7 +2,10 @@
 
 This repository is to create the analyses for the manuscript "Experimental and statistical decisions influence the accuracy and reliability of host resistance and tolerance measurements". 
 
-![Screenshot](readme_github/github_readmefig.png)
+See this figure for all of the necessary R scripts for each analyses and their corresponding outputs in terms of .csv files, figures and tables.
+
+![Screenshot](readme_image/github_readmefig.png)
+**Code Overview Figure:** Overview of the R scripts, their dependencies and their inputs and outputs for the four analyses: Baseline, Avoidance, Exposure Tolerance and Clearance. The grey boxes represent the main IBM and functions R scripts (dark grey) and the R scripts necessary to run each separate analysis (light grey). Dashed arrows represent the necessary coding dependencies for all analyses (black) or for an individual analysis (grey) while solid arrows indicate outputs including .csv files (blue boxes and text), tables (green text) and figures (purple text).
 
 ## BASELINE ANALYSES
 **Main Coding Scripts:** Baseline_Scenarios.R, Baseline_Stats.R, Baseline_Figs.R 
