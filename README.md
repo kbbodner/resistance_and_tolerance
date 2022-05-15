@@ -4,7 +4,7 @@ This repository is to create the analyses for the manuscript "Experimental and s
 
 See the figure below to see which R scripts are necessary for each main analyses (Baseline, Avoidance, Exposure Tolerance and Clearance) and the corresponding outputs from each R script including .csv files, figures and tables.
 
-![Screenshot](readme_image/github_readmefig_smaller.png)
+
 **Code Overview Figure:** Overview of the R scripts, their dependencies and their inputs and outputs for the four analyses: Baseline, Avoidance, Exposure Tolerance and Clearance. The grey boxes represent the main IBM and functions R scripts (dark grey) and the R scripts necessary to run each separate analysis (light grey). Dashed arrows represent the necessary coding dependencies for all analyses (black) or for an individual analysis (grey) while solid arrows indicate outputs including .csv files (blue boxes and text), tables (green text) and figures (purple text).
 
 ## BASELINE ANALYSES
