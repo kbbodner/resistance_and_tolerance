@@ -22,7 +22,7 @@ See the figure below to see which R scripts are necessary for each main analyses
 
 ***Figure(s): 3 & S2 (from Baseline_Figs.R)***
 
-**Summary:** Here we conduct simulations and statistical analyses to see how dosage of parasites, arena size, and exposure duration influence estimates of infection resistance and infection tolerance differences. Simulations of different exposure conditions are produced from Data_Functions.R and statistics from Poisson generalized linear models (for infection resistance differences) and Cox proportional hazards models (for infection tolerance differences) from Stats_Functions.R. To recreate statistics from Table 2 & S2 run Baseline_Stats.R and to recreate Figures 3 and S2, run Baseline_Figs.R. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**.
+**Summary:** Here we conduct simulations and statistical analyses to see how dosage of parasites, arena size, and exposure duration influence estimates of infection resistance and infection tolerance differences. Simulations of different exposure conditions are produced from Data_Functions.R and statistics from Poisson generalized linear models (for infection resistance differences) and Cox proportional hazards models (for infection tolerance differences) from Stats_Functions.R. To recreate statistics from Table 2 & S2 run Baseline_Stats.R and to recreate Figures 3 and S2, run Baseline_Figs.R. Copies of .csv files can be found in the data folder. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**.
 
 ## AVOIDANCE ANALYSIS
 
@@ -36,7 +36,7 @@ See the figure below to see which R scripts are necessary for each main analyses
 
 ***Figures: 4 & S4 (from Avoidance_Main.R)***
 
-**Summary:** Here we conduct simulations and statistical analyses to see how dosage of parasites, arena size, and exposure duration influence estimates of infection resistance differences when avoidance (behavioural resistance) is present. We also illustrate how differences in avoidance can be captured by using the remaining number of parasites following exposure. Simulations of different exposure conditions are produced from Data_Functions.R and statistics from Binomial linear models (for infection resistance and Avoidance differences) from Stats_Functions.R. To recreate statistics from Tables 4, S3 and S4 and Figures 4 and S4, run Avoidance_Main.R. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**. 
+**Summary:** Here we conduct simulations and statistical analyses to see how dosage of parasites, arena size, and exposure duration influence estimates of infection resistance differences when avoidance (behavioural resistance) is present. We also illustrate how differences in avoidance can be captured by using the remaining number of parasites following exposure. Simulations of different exposure conditions are produced from Data_Functions.R and statistics from Binomial linear models (for infection resistance and Avoidance differences) from Stats_Functions.R. To recreate statistics from Tables 4, S3 and S4 and Figures 4 and S4, run Avoidance_Main.R. A copy of .csv file can be found in the data folder. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**. 
 
 ## EXPOSURE TOLERANCE ANALYSIS
 
@@ -51,7 +51,7 @@ See the figure below to see which R scripts are necessary for each main analyses
 
 ***Figure(s): 5 (from Exp.Tolerance_Main.R)***
 
-**Summary:** Here we conduct simulations and statistical analyses to see how the length of an experiment influence estimates of infection tolerance differences when exposure tolerance differences are present. Simulations of different experiment lengths and timing of sampling are produced from Data_Functions.R and statistics from Cox Proportional Hazards Models (for infection and exposure tolerance differences) from Stats_Functions.R. To recreate the statistics from the Tables 5, S5 and S6 and to reproduce Figure 5, run Exp.Tolerance_Main.R. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**. 
+**Summary:** Here we conduct simulations and statistical analyses to see how the length of an experiment influence estimates of infection tolerance differences when exposure tolerance differences are present. Simulations of different experiment lengths and timing of sampling are produced from Data_Functions.R and statistics from Cox Proportional Hazards Models (for infection and exposure tolerance differences) from Stats_Functions.R. To recreate the statistics from the Tables 5, S5 and S6 and to reproduce Figure 5, run Exp.Tolerance_Main.R. A copy of the .csv file can be found in the data folder. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**. 
 
 ## CLEARANCE ANALYSIS
 
@@ -68,6 +68,6 @@ See the figure below to see which R scripts are necessary for each main analyses
 
 ***Figure(s): 6 (from Clearance_Main.R)***
 
-**Summary:** Here we conduct simulations and statistical analyses to see how timing of the first sampling and number of samples taken influence estimates of infection resistance differences when clearance differences are present. We also check whether clearance can confound infection tolerance differences. Simulations of different sampling times and events are produced from Data_Functions.R and statistics from Poisson GLMs (for infection resistance and clearance differences) and from Stats_Functions.R. Statistics from Cox Proportional Hazards Models to compare clearance and tolerance differences are also from Stats_Functions.R. To recreate statistics from Table 6 and S7 and Figure 6, run Clearance_Main.R. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**.
+**Summary:** Here we conduct simulations and statistical analyses to see how timing of the first sampling and number of samples taken influence estimates of infection resistance differences when clearance differences are present. We also check whether clearance can confound infection tolerance differences. Simulations of different sampling times and events are produced from Data_Functions.R and statistics from Poisson GLMs (for infection resistance and clearance differences) and from Stats_Functions.R. Statistics from Cox Proportional Hazards Models to compare clearance and tolerance differences are also from Stats_Functions.R. To recreate statistics from Table 6 and S7 and Figure 6, run Clearance_Main.R. Copies of .csv files can be found in the data folder. Please ensure you have downloaded all coding file dependencies outlined in the **Code Overview Figure**.
 
 
