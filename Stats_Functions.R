@@ -1,15 +1,18 @@
 ##############################################################
 
 
-
+#MAIN STATISTICAL FUNCTIONS
 
 
 ##############################################################
+
+#Contains the main statistical functions to run Poisson GLMs, Cox Models and Binomial Models for Baseline, Exposure Tolerance, Clearance and Avoidance Analyses
 #Packages
 library(survival)
 library(survminer)
 
 #pois.glm.iterator: Poisson GLM Analyses used in baseline analysis to measure infection resistance
+#inds.df is dataset generated from IBM.R
 pois.glm.iterator.basic.exp<-function(inds.df=NULL){
   
   unique.id.vec<-unique(inds.df$unique.id)
@@ -54,7 +57,7 @@ pois.glm.iterator.basic.exp<-function(inds.df=NULL){
 
 
 #coxph.iterator: Cox Models Analyses used in baseline analysis to measure infection tolerance and
-#used in _________
+#used in Baseline, Exposure Tolerance and Clearance Analyses
 #inds.df: the scenario data generated from the Scenario scripts
 #interaction: whether an interaction should be included between parasites and host group
 coxph.iterator<-function(inds.df=NULL,interaction=F){
