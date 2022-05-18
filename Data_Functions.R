@@ -1,7 +1,10 @@
 #Main Scenario Generating Functions
 source("IBM.R")
 
-#BASIC EXPERIMENT DESIGN FUNCTION USED BY 
+#BASIC EXPERIMENT DESIGN FUNCTION USED BY BASELINE ANLALYSES AND CLEARANCE ANALYSES
+#Includes arena size, infection length, sampling periods, experiment length and sample size for research design characteristics
+#Can select whether the var.of.interest is beta (higher and lower infection resistance) or alpha (higher and lower infection tolerance)
+#runs IBM.R to create scenarios from IBMs
 main.experimental.setup<-function(arena.size=6, infection.length=180,mu=0,num.sample.periods=2,var.of.interest=NULL,
                                   beta.2=1,alpha.2=1,resist.and.tol.proc="none",
                                   experiment.length=20, sample.size=10,C=30){
@@ -41,7 +44,7 @@ main.experimental.setup<-function(arena.size=6, infection.length=180,mu=0,num.sa
                                post.infect.sample=post.infect.sample, sample.size=sample.size) #returns single dataframe
     baseline.df$var.level<-"baseline"
     
-    
+    #sets the number and timing of sampling
     high.df<-sampling.time(inds_hist=high,experiment.length=experiment.length,num.sample.periods=num.sample.periods,
                            post.infect.sample=post.infect.sample, sample.size=sample.size) #returns single dataframe
     high.df$var.level<-"high"
@@ -64,7 +67,9 @@ main.experimental.setup<-function(arena.size=6, infection.length=180,mu=0,num.sa
 }
 
 
-#AVOIDANCE, EXPOSURE TOL. & CLEARANCE FUNCTION USED BY AVOIDANCE_MAIN.R,.....
+#AVOIDANCE, EXPOSURE TOL. & CLEARANCE FUNCTION USED BY AVOIDANCE_MAIN.R TO MEASURE DIFFERENCES IN THESE THREE PROCESSES
+#Allows for differences in arena size, dosage (C), infection length, number of sampling periods, sample size, experiment length and whether there was sampling following exposure
+#infect.resist.and.clearance.diff indicates whether this analyses is for clearance (where clearance is tested to see if it can be confounded as tolerance)
 main.processes.model<-function(process.of.interest=NULL,arena.size=6,C=30,infection.length=180, num.sample.periods=2,
                                sample.size=10,experiment.length=20,post.infect.sample=T, 
                                infect.resist.and.clearance.diff = F){
@@ -145,7 +150,9 @@ main.processes.model<-function(process.of.interest=NULL,arena.size=6,C=30,infect
   
 }
 
-#Extra Processes Function
+#CLEARANCE ANALYSES FOR MEASURING BOTH INFECTION RESISTANCE AND CLEARANCE DIFFERENCES
+#Runs number of samples and timing of samples for hosts with clearance differences
+#takes in arena size, dosage level (C), length of exposure (infection.length), number of samples (sample size) and experiment length
 est.resist.model<-function(arena.size=6,C=30,infection.length=180,
                            sample.size=10,experiment.length=20){
   
