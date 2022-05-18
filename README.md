@@ -1,4 +1,4 @@
-# resistance_and_tolerance
+# Resistance and Tolerance Repository
 
 This repository is to create the analyses for the manuscript "Experimental and statistical decisions influence the accuracy and reliability of host resistance and tolerance measurements". 
 
