@@ -167,7 +167,7 @@ source("Avoidance_Movement.R")
 #time steps
 #infection happens on day 0 and right away parasites establish
 experimental.model.run<-function(alpha=0.001,mu=1/5,beta=0.5,alpha.pent=0.01,H=100,C=30,arena.size=5,infection.length=90,
-                                 beh.res=F,pent.mort=F,parasite.mort=F){
+                                 beh.res=F,pent.mort=F,parasite.mort=F, experiment.length=51){
 
 #create inds matrix, ind_hist
 inds<-array(data=0,dim=c(H,11))
@@ -182,13 +182,14 @@ inds_hist<-NULL;
   
 #simulation set-up
 ts<-1
-time_steps<-51; #experimental length (maybe should set?)
+time_steps<-experiment.length + 1; #experimental length (maybe should set?)
 
 num.inds<-nrow(inds);
 
 if(ts==1){
   #1) INFECTION & ESTABLISHMENT (BEHAVIOURAL RESISTANCE)
   
+  if(C!=0){
   inds<-infection.function(inds=inds,arena.size=arena.size,infection.length=infection.length, beh.res=beh.res,
                      H=H,C=C,beta=beta)#function that infects hosts
 
@@ -204,23 +205,37 @@ if(ts==1){
     inds<-host.pent.mort(inds=inds, alpha=alpha.pent)
     inds[inds[,"host.pent.mort"]>=1,"time.died"]=1 
   }
-
-  inds[,"t"]<-ts #set day 1 for infection
+  } #end of C!=0 
+  
+  if(C==0){
+    #no infection length as no parasites
+    inds[,"infection.length"]<-0
+    
+    #2) SET NUMBER OF PARASITES
+    inds[,"established.parasites"]<-0
+    inds[,"No.parasites"]<-0
+    
+  }
+  
+  
+ inds[,"t"]<-ts #set day 1 for infection
  inds_hist[[1]]<-inds
   
   ts<-ts + 1
-}
-  #Established parasite resistance (T/F)
-# if(parasite.mort==T){
-#     mu=1/100
-# }
+  
+} #end of ts==1
+
 
   
   #3) REMAINDER OF EXPERIMENT
-  while(ts<time_steps){ #move this while loop
+  while(ts<time_steps){ 
+    
+    if(C!=0){
     #inds<-host.mort(inds=inds, alpha=alpha)
-    inds<-host.dens.mort(inds=inds, alpha=alpha)
-    inds<-parasite.mortality(inds=inds, mu=mu)
+    inds<-host.dens.mort(inds=inds, alpha=alpha) #function only applicable if C>0
+    inds<-parasite.mortality(inds=inds, mu=mu)} #function only applicable if C>0
+    
+    
     temp.time.died<-ifelse(inds[,"host.mort"]>0,ts,inds[,"time.died"])
     inds[,"time.died"]<-temp.time.died
     inds[,"t"]<-ts
