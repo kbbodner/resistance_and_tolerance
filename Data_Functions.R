@@ -33,11 +33,11 @@ main.experimental.setup<-function(arena.size=6, infection.length=180,mu=0,num.sa
       mu.1=mu*10  #baseline has higher tolerance (alpha is lower) and higher immunity (mu is higher)
     }
     
-    
+    #added experimental length to functions so if things go wrong, remove that.
     baseline<-experimental.model.run(alpha=alpha,mu=mu.1,beta=beta,H=100,C=C,arena.size=arena.size,infection.length=infection.length,
-                                     beh.res=F,pent.mort=F,parasite.mort=F) #returns inds_hist (a list)
+                                     beh.res=F,pent.mort=F,parasite.mort=F, experiment.length=experiment.length) #returns inds_hist (a list)
     high<-experimental.model.run(alpha=alpha.high,mu=mu.2,beta=beta.high,H=100,C=C,arena.size=arena.size,infection.length=infection.length,
-                                 beh.res=F,pent.mort=F,parasite.mort=F) #returns inds_hist (a list)
+                                 beh.res=F,pent.mort=F,parasite.mort=F, experiment.length=experiment.length) #returns inds_hist (a list)
     
     
     baseline.df<-sampling.time(inds_hist=baseline,experiment.length=experiment.length,num.sample.periods=num.sample.periods,
@@ -55,8 +55,16 @@ main.experimental.setup<-function(arena.size=6, infection.length=180,mu=0,num.sa
     
     
     final.df<-rbind(baseline.df,high.df)
+    
+    if(C!=0){
     final.df$arena.size<-paste(arena.size)
-    final.df$infection.length.minutes<-paste(infection.length)
+    final.df$infection.length.minutes<-paste(infection.length)}
+    if(C==0){
+      final.df$arena.size<-0
+      final.df$infection.length.minutes<-0
+    }
+    
+    
     final.df$sim.number<-paste(i)
     
     df.total.list[[i]]<-final.df

@@ -7,6 +7,7 @@
 #Generates Exposure Tolerance Differences to produce Figure 5 and Tables 5, S5 & S6
 source("Data_Functions.R") 
 
+
 #calculate percentage alive (for fig. 5 data)
 percent.alive.func<-function(df,n,t){
   extra.num<-which(!seq(1,t) %in% unique(df$time.died))

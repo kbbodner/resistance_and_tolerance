@@ -96,6 +96,8 @@ coxph.iterator<-function(inds.df=NULL,interaction=F){
     
     
     #surv object for model
+    
+    # right censoring as study ends before the event (i.e. death) has occurred.
     surv_object.all<-Surv(time=df.total$time.to.death,event=df.total$censored,type="right") 
     
     
@@ -137,6 +139,8 @@ coxph.iterator<-function(inds.df=NULL,interaction=F){
       }else{dataset.all.interact$converge.issue[i]<-"no"}
       
       options(warn=-1)
+      
+      
       fit.coxph.all.interact<-coxph(surv_object.all~total.parasites*var.level,df.total,control = coxph.control(iter.max = 50))
       
       dataset.all.interact[i,1:3]<-summary(fit.coxph.all.interact)$coefficients[,1] 
